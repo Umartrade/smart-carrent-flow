@@ -3,6 +3,7 @@ import { Car, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import BookingModal from "./BookingModal";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,9 +47,11 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex">
-            <Button className="bg-blue-600 hover:bg-blue-700">
-              Book Now
-            </Button>
+            <BookingModal>
+              <Button className="bg-blue-600 hover:bg-blue-700">
+                Book Now
+              </Button>
+            </BookingModal>
           </div>
 
           {/* Mobile menu button */}
@@ -82,9 +85,11 @@ const Header = () => {
                 </Link>
               ))}
               <div className="pt-2">
-                <Button className="w-full bg-blue-600 hover:bg-blue-700">
-                  Book Now
-                </Button>
+                <BookingModal>
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700">
+                    Book Now
+                  </Button>
+                </BookingModal>
               </div>
             </div>
           </div>

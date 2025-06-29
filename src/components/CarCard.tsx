@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FuelIcon, UsersIcon, SettingsIcon, StarIcon } from "lucide-react";
+import BookingModal from "./BookingModal";
 
 interface Car {
   id: number;
@@ -67,9 +68,11 @@ const CarCard = ({ car }: CarCardProps) => {
             <span className="text-2xl font-bold text-gray-800">${car.price}</span>
             <span className="text-gray-600">/day</span>
           </div>
-          <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold transition-all duration-300 transform hover:scale-105">
-            Book Now
-          </Button>
+          <BookingModal carName={car.name}>
+            <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold transition-all duration-300 transform hover:scale-105">
+              Book Now
+            </Button>
+          </BookingModal>
         </div>
       </CardContent>
     </Card>
