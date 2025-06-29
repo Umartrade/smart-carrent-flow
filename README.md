@@ -1,73 +1,191 @@
-# Welcome to your Lovable project
 
-## Project info
+# Carent - Car Rental Application
 
-**URL**: https://lovable.dev/projects/bca8434c-0f82-458f-91cf-ef583bc37151
+A modern, responsive car rental web application built with React, TypeScript, and Tailwind CSS.
 
-## How can I edit this code?
+## Project Overview
 
-There are several ways of editing your application.
+Carent is a sleek car rental platform that allows users to browse, filter, and explore various vehicle categories. The application features a modern UI with responsive design, making it accessible across all devices.
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bca8434c-0f82-458f-91cf-ef583bc37151) and start prompting.
+- **Responsive Design**: Fully responsive layout that works on desktop, tablet, and mobile devices
+- **Vehicle Categories**: Browse cars by category (Economy, Luxury, SUV, Sports)
+- **Advanced Filtering**: Filter vehicles by category with real-time updates
+- **Multi-page Navigation**: Complete navigation structure with Home, Fleet, About, and Contact pages
+- **Modern UI**: Clean, professional design with smooth animations and transitions
+- **Sticky Navigation**: Persistent header with active page highlighting
 
-Changes made via Lovable will be committed automatically to this repo.
+## Tech Stack
 
-**Use your preferred IDE**
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Routing**: React Router DOM
+- **State Management**: React hooks (useState)
+- **Icons**: Lucide React
+- **Data Fetching**: TanStack Query (React Query)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Project Structure
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/          # Reusable UI components
+│   ├── ui/             # shadcn/ui components
+│   ├── Header.tsx      # Navigation header
+│   ├── Hero.tsx        # Homepage hero section
+│   ├── FilterSection.tsx # Vehicle category filters
+│   ├── FeaturedCars.tsx # Car listing grid
+│   └── CarCard.tsx     # Individual car display card
+├── pages/              # Application pages
+│   ├── Index.tsx       # Homepage
+│   ├── Fleet.tsx       # Vehicle fleet page
+│   ├── About.tsx       # About us page
+│   ├── Contact.tsx     # Contact page
+│   └── NotFound.tsx    # 404 error page
+├── data/               # Static data
+│   └── carData.ts      # Vehicle information
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+└── App.tsx             # Main application component
 ```
 
-**Edit a file directly in GitHub**
+## Key Components
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Header Component
+- Responsive navigation with mobile menu
+- Active page highlighting
+- Logo and brand identity
+- Call-to-action button
 
-**Use GitHub Codespaces**
+### Hero Section
+- Eye-catching landing section
+- Gradient background
+- Compelling copy and imagery
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Filter Section
+- Category-based vehicle filtering
+- Interactive filter buttons
+- Real-time filtering updates
 
-## What technologies are used for this project?
+### Car Grid
+- Responsive grid layout
+- Individual car cards with details
+- Category-based filtering
 
-This project is built with:
+## Pages
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+1. **Home (/)**: Landing page with hero section and featured vehicles
+2. **Fleet (/fleet)**: Complete vehicle inventory with filtering
+3. **About (/about)**: Company information and mission
+4. **Contact (/contact)**: Contact form and information
 
-## How can I deploy this project?
+## Data Structure
 
-Simply open [Lovable](https://lovable.dev/projects/bca8434c-0f82-458f-91cf-ef583bc37151) and click on Share -> Publish.
+Vehicle data includes:
+- Vehicle ID and name
+- Category (economy, luxury, suv, sports)
+- Pricing information
+- Specifications
+- Images and descriptions
 
-## Can I connect a custom domain to my Lovable project?
+## Installation & Setup
 
-Yes, you can!
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn package manager
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Getting Started
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Umartrade/Carent.git
+   cd Carent
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+5. **Preview production build**
+   ```bash
+   npm run preview
+   ```
+
+## Available Scripts
+
+- `npm run dev` - Start development server with hot reload
+- `npm run build` - Build application for production
+- `npm run preview` - Preview production build locally
+- `npm run lint` - Run ESLint for code quality checks
+
+## Customization
+
+### Adding New Vehicle Categories
+1. Update the category filter options in `FilterSection.tsx`
+2. Add new vehicle data to `carData.ts`
+3. Ensure proper category filtering in `FeaturedCars.tsx`
+
+### Styling Modifications
+- Tailwind CSS classes can be modified throughout components
+- Global styles are in `src/index.css`
+- Component-specific styles use Tailwind utility classes
+
+### Adding New Pages
+1. Create new page component in `src/pages/`
+2. Add route to `src/App.tsx`
+3. Update navigation in `src/components/Header.tsx`
+
+## Deployment
+
+### Lovable Platform
+- Click the "Publish" button in the Lovable editor
+- Your app will be deployed automatically
+
+### Custom Domain
+- Navigate to Project > Settings > Domains in Lovable
+- Connect your custom domain (requires paid plan)
+
+### Self-Hosting
+- Build the project: `npm run build`
+- Deploy the `dist` folder to your hosting provider
+- Configure your web server to handle client-side routing
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Contact
+
+For questions or support, please visit our [Contact Page](./src/pages/Contact.tsx) or reach out through the application.
+
+---
+
+Built with ❤️ using React, TypeScript, and Tailwind CSS
